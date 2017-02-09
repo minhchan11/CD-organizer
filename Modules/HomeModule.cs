@@ -1,5 +1,6 @@
 using Nancy;
 using CollectionOrganizer.Objects;
+using System;
 using System.Collections.Generic;
 
 namespace DiskOrganizer
@@ -19,13 +20,11 @@ namespace DiskOrganizer
         return View["artists.cshtml", allArtist];
       };
       Get["/artists/new"] = _ => {
-        return View["artist_form.cshtml"]
+        return View["artist_form.cshtml"];
       };
       //Create Post route for all artist list when submit link
       Post["/artists"] = _ => {
-        //input new artist name
         var newArtist = new Artist(Request.Form["artist-name"]);
-        //add all into the official list
         var allArtist = Artist.GetAll();
         return View["artists.cshtml",allArtist];
       };
@@ -55,8 +54,8 @@ namespace DiskOrganizer
         string diskTitle = Request.Form["cd-name"];
         Disk newDisk = new Disk(diskTitle);
         inputDisk.Add(newDisk);
-        model.Add("artist", inputArtist);
         model.Add("disk", inputDisk);
+        model.Add("artist", inputArtist);
         return View["artist.cshtml",model];
       };
     }

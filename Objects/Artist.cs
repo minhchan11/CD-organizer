@@ -38,7 +38,7 @@ namespace CollectionOrganizer.Objects
     //Make list of DISKS element public and add on to the list
     public List<Disk> GetDisk()
     {
-      return _disks
+      return _disks;
     }
     public void AddDisk(Disk disk)
     {

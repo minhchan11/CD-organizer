@@ -10,7 +10,7 @@ namespace CollectionOrganizer.Objects
     //Create a public object from the original
     public Disk (string title)
     {
-      _title = title
+      _title = title;
     }
     //Set Get for private variables
     public string GetTitle()

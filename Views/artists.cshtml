@@ -1,0 +1,12 @@
+<h1 class="jumbotron">Bands and Artists in your collection</h1>
+<div class="well">
+  @if (@Model.Count == 0)
+  {
+    <h4> Your collection is empty. Add some! </h4>
+  }
+  @foreach (var singleArtist in @Model)
+  {
+    <h4><a href = 'artists/@singleArtist.GetId()'>@singleArtist.GetName()</a></h4>
+  }
+  <h5><a href="/">Go back to your home page</a></h5>
+</div>

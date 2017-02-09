@@ -1,0 +1,11 @@
+<h1 class="jumbotron">All the CDs you have in @Model["artist"].GetArtist():</h1>
+<div class="well">
+  <ol>
+    @foreach(var cd in @Model["disk"])
+    {
+      <li>@cd.GetTitle()</li>
+    }
+  </ol>
+  <h5><a href="/artists/@Model["artist"].GetId()/disk/new">Add a new title to this artist/band</a></h5>
+  <h5><a href="/">Go back to your home page</a></h5>
+</div>

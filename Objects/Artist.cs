@@ -60,19 +60,26 @@ namespace CollectionOrganizer.Objects
       return _instances[searchId-1];
     }
 
-    public static List<Artist> SearchName(string name)
+//HI JOHN PLEASE HELP!
+    public static List<Artist> SearchName(string searchPhrase)
     {
       foreach (Artist myArtist in _instances)
       {
-        if (myArtist._artist == name) {
-          Console.WriteLine("blah");
+        if (myArtist._artist == searchPhrase) {
+          int FoundId = myArtist._id;
+          Console.WriteLine("matched");
+          Console.WriteLine(FoundId);
+          Console.WriteLine(myArtist._artist);
+          //What should i return?
         }
         else
         {
-          Console.WriteLine("bleh");
+          Console.WriteLine("not matched");
         }
-        Console.WriteLine("foreach");
+        Console.WriteLine("method worked");
       }
+      //What are the elements that could be returned?
+      return _instances;
     }
   }
 }

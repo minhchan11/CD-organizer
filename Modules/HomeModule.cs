@@ -63,8 +63,8 @@ namespace DiskOrganizer
       //Create Search function
       Post["/artist-search-name"] = _ =>{
         string artistSearch = Request.Form["search-artist"];
-        Artist matchArtist = Artist.SearchName(artistSearch);
-        return View["artist_search_name.cshtml",matchArtist];
+        Artist.SearchName(artistSearch);
+        return View["artist_search_name.cshtml"];
       };
     }
   }

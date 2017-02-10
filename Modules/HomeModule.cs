@@ -15,7 +15,6 @@ namespace DiskOrganizer
       };
       //Create Get route for all artist list when clicking on link
       Get["/artists"] = _ => {
-        //add all into the official list
         var allArtist = Artist.GetAll();
         return View["artists.cshtml", allArtist];
       };
@@ -57,6 +56,15 @@ namespace DiskOrganizer
         model.Add("disk", inputDisk);
         model.Add("artist", inputArtist);
         return View["artist.cshtml",model];
+      };
+      Get["/artist-search"] = _ =>{
+        return View["artist_search.cshtml"];
+      };
+      //Create Search function
+      Post["/artist-search-name"] = _ =>{
+        string artistSearch = Request.Form["search-artist"];
+        Artist matchArtist = Artist.SearchName(artistSearch);
+        return View["artist_search_name.cshtml",matchArtist];
       };
     }
   }

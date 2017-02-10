@@ -1,0 +1,13 @@
+body {
+  font-family: font-family: 'Slabo 27px', serif;
+  color: #626c7c;
+  height: 100vh;
+  width: 100vh;
+  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#cccccc 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.jumbotron {
+  background-color: rgba(206, 234, 204,0.5)
+}

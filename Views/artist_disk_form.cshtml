@@ -1,3 +1,6 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
 <h1 class="jumbotron">Add a new title to your @Model["artist"].GetArtist()</h1>
 <form action="/disks" method="post">
   <div class="form-group panel panel-success">
@@ -9,7 +12,7 @@
       <label for="cd-name">CD Name</label>
       <input type="text" name="cd-name" class="form-control" id="cd-name">
     </div>
-    <button type="submit" name="button">Add this title to your collection</button>
+    <button type="submit" class="btn btn-md btn-success">Add this title to your collection</button>
   </div>
 </form>
 <h5><a href="/">Go back to your home page</a></h5>

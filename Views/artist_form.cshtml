@@ -1,3 +1,6 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
 <h1 class="jumbotron">Add a new artist</h1>
 <form action="/artists" method="post">
   <div class="form-group panel panel-success">
@@ -6,9 +9,9 @@
     </div>
     <div class="panel-body">
       <label for="artist-name">Artist or Band Name</label>
-      <input type="text" name="artist-name" class="form-control" id="artist-name">
-    </div>
-    <button type="submit" name="button">Add this band/artist to your collection</button>
+      <input type="text" name="artist-name" class="form-control" id="artist-name"><br>
+    <button type="submit" class="btn btn-md btn-success">Add this band/artist to your collection</button>
+  </div>
   </div>
 </form>
 <h5><a href="/">Go back to your home page</a></h5>

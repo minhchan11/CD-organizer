@@ -59,5 +59,20 @@ namespace CollectionOrganizer.Objects
     {
       return _instances[searchId-1];
     }
+
+    public static List<Artist> SearchName(string name)
+    {
+      foreach (Artist myArtist in _instances)
+      {
+        if (myArtist._artist == name) {
+          Console.WriteLine("blah");
+        }
+        else
+        {
+          Console.WriteLine("bleh");
+        }
+        Console.WriteLine("foreach");
+      }
+    }
   }
 }

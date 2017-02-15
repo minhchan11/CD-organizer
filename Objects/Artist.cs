@@ -12,10 +12,10 @@ namespace CollectionOrganizer.Objects
     private static List<Artist> _instances = new List<Artist>{};
 
     //Create a public object from the original
-    public Artist (string Artist)
+    public Artist (string artist)
     {
       //config string
-      _artist = Artist;
+      _artist = artist;
       //config id
       _instances.Add(this);
       _id = _instances.Count;
@@ -60,26 +60,17 @@ namespace CollectionOrganizer.Objects
       return _instances[searchId-1];
     }
 
-//HI JOHN PLEASE HELP!
-    public static List<Artist> SearchName(string searchPhrase)
+    public static Artist SearchName(string searchPhrase)
     {
-      foreach (Artist myArtist in _instances)
+      Artist foundArtist = new Artist(searchPhrase);
+      foreach (var myArtist in _instances)
       {
         if (myArtist._artist == searchPhrase) {
-          int FoundId = myArtist._id;
-          Console.WriteLine("matched");
-          Console.WriteLine(FoundId);
-          Console.WriteLine(myArtist._artist);
-          //What should i return?
+          foundArtist= myArtist;
         }
-        else
-        {
-          Console.WriteLine("not matched");
-        }
-        Console.WriteLine("method worked");
       }
       //What are the elements that could be returned?
-      return _instances;
+      return foundArtist;
     }
   }
 }
